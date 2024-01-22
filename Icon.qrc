@@ -1,0 +1,25 @@
+<RCC>
+  <qresource prefix="Windows">
+    <file>Icon/Maximize.png</file>
+    <file>Icon/close.png</file>
+    <file>Icon/minimize.png</file>
+    <file>Icon/Logo.png</file>
+  </qresource>
+  <qresource prefix="Background">
+    <file>Icon/Login_Bg.png</file>
+  </qresource>
+  <qresource prefix="Menu">
+    <file>Icon/Arrow.png</file>
+    <file>Icon/Depo.png</file>
+    <file>Icon/Elektrik.png</file>
+    <file>Icon/info.png</file>
+    <file>Icon/Rapor.png</file>
+    <file>Icon/Referans Çıkar.png</file>
+    <file>Icon/Home.png</file>
+    <file>Icon/Excel.png</file>
+    <file>Icon/Referans Ekle.png</file>
+    <file>Icon/Stok Ekle.png</file>
+    <file>Icon/Stok Çıkar.png</file>
+    <file>Icon/Search.png</file>
+  </qresource>
+</RCC>
