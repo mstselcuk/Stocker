@@ -281,7 +281,7 @@ icon:
           <property name="bottomMargin">
            <number>0</number>
           </property>
-          <item alignment="Qt::AlignHCenter">
+          <item>
            <widget class="QFrame" name="frame_Menu">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
@@ -343,7 +343,7 @@ background-color: rgb(2, 128, 144);
              <property name="bottomMargin">
               <number>0</number>
              </property>
-             <item>
+             <item alignment="Qt::AlignLeft">
               <widget class="QFrame" name="frame_Home">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -492,7 +492,7 @@ background-color: rgb(2, 128, 144);
                </layout>
               </widget>
              </item>
-             <item>
+             <item alignment="Qt::AlignLeft">
               <widget class="QFrame" name="frame_Referance">
                <property name="minimumSize">
                 <size>
@@ -609,7 +609,7 @@ border:none;
                </layout>
               </widget>
              </item>
-             <item>
+             <item alignment="Qt::AlignLeft">
               <widget class="QFrame" name="frame_Stock">
                <property name="styleSheet">
                 <string notr="true">*{
@@ -723,7 +723,7 @@ border:none;
                </layout>
               </widget>
              </item>
-             <item>
+             <item alignment="Qt::AlignLeft">
               <widget class="QFrame" name="frame_Report">
                <property name="styleSheet">
                 <string notr="true">*{
@@ -839,7 +839,7 @@ disabled off
                </layout>
               </widget>
              </item>
-             <item>
+             <item alignment="Qt::AlignLeft">
               <widget class="QFrame" name="frame_Info">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">

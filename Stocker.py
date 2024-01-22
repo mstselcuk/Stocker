@@ -226,7 +226,7 @@ class Ui_Stocker(object):
         self.toolButton_StokArama.setToolButtonStyle(QtCore.Qt.ToolButtonIconOnly)
         self.toolButton_StokArama.setObjectName("toolButton_StokArama")
         self.verticalLayout_8.addWidget(self.toolButton_StokArama)
-        self.verticalLayout_3.addWidget(self.frame_Home)
+        self.verticalLayout_3.addWidget(self.frame_Home, 0, QtCore.Qt.AlignLeft)
         self.frame_Referance = QtWidgets.QFrame(self.frame_Menu)
         self.frame_Referance.setMinimumSize(QtCore.QSize(20, 0))
         self.frame_Referance.setStyleSheet("*{\n"
@@ -271,7 +271,7 @@ class Ui_Stocker(object):
         self.toolButton_DelReferance.setToolButtonStyle(QtCore.Qt.ToolButtonIconOnly)
         self.toolButton_DelReferance.setObjectName("toolButton_DelReferance")
         self.verticalLayout_7.addWidget(self.toolButton_DelReferance)
-        self.verticalLayout_3.addWidget(self.frame_Referance)
+        self.verticalLayout_3.addWidget(self.frame_Referance, 0, QtCore.Qt.AlignLeft)
         self.frame_Stock = QtWidgets.QFrame(self.frame_Menu)
         self.frame_Stock.setStyleSheet("*{\n"
 "border:none;\n"
@@ -317,7 +317,7 @@ class Ui_Stocker(object):
         self.toolButton_DelStock.setToolButtonStyle(QtCore.Qt.ToolButtonIconOnly)
         self.toolButton_DelStock.setObjectName("toolButton_DelStock")
         self.verticalLayout_4.addWidget(self.toolButton_DelStock)
-        self.verticalLayout_3.addWidget(self.frame_Stock)
+        self.verticalLayout_3.addWidget(self.frame_Stock, 0, QtCore.Qt.AlignLeft)
         self.frame_Report = QtWidgets.QFrame(self.frame_Menu)
         self.frame_Report.setStyleSheet("*{\n"
 "border:none;\n"
@@ -366,7 +366,7 @@ class Ui_Stocker(object):
         self.toolButton_Excel.setToolButtonStyle(QtCore.Qt.ToolButtonIconOnly)
         self.toolButton_Excel.setObjectName("toolButton_Excel")
         self.verticalLayout_5.addWidget(self.toolButton_Excel)
-        self.verticalLayout_3.addWidget(self.frame_Report)
+        self.verticalLayout_3.addWidget(self.frame_Report, 0, QtCore.Qt.AlignLeft)
         self.frame_Info = QtWidgets.QFrame(self.frame_Menu)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
@@ -400,8 +400,8 @@ class Ui_Stocker(object):
         self.toolButton_Info.setToolButtonStyle(QtCore.Qt.ToolButtonIconOnly)
         self.toolButton_Info.setObjectName("toolButton_Info")
         self.verticalLayout_6.addWidget(self.toolButton_Info)
-        self.verticalLayout_3.addWidget(self.frame_Info)
-        self.horizontalLayout_4.addWidget(self.frame_Menu, 0, QtCore.Qt.AlignHCenter)
+        self.verticalLayout_3.addWidget(self.frame_Info, 0, QtCore.Qt.AlignLeft)
+        self.horizontalLayout_4.addWidget(self.frame_Menu)
         self.frame_Page = QtWidgets.QFrame(self.Main)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
@@ -519,4 +519,3 @@ class Ui_Stocker(object):
             self.sayac=0
 
 import Icon_rc
-
