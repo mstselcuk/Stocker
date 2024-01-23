@@ -169,6 +169,7 @@ class Ui_MainWindow(object):
         self.label_photoUretim.setMidLineWidth(0)
         self.label_photoUretim.setText("")
         self.label_photoUretim.setPixmap(QtGui.QPixmap(":/Menu/Icon/Elektrik.png"))
+        self.label_photoUretim.setMargin(20)
         self.label_photoUretim.setScaledContents(True)
         self.label_photoUretim.setObjectName("label_photoUretim")
         self.label_NameUretim = QtWidgets.QLabel(self.frame_Uretim)
@@ -227,6 +228,7 @@ class Ui_MainWindow(object):
 "")
         self.label_PhotoDepo.setText("")
         self.label_PhotoDepo.setPixmap(QtGui.QPixmap(":/Menu/Icon/Depo.png"))
+        self.label_PhotoDepo.setMargin(30)
         self.label_PhotoDepo.setScaledContents(True)
         self.label_PhotoDepo.setObjectName("label_PhotoDepo")
         self.horizontalLayout_4.addWidget(self.frame_Depo)
@@ -343,6 +345,7 @@ class Ui_MainWindow(object):
 "")
         self.label_PhotoUretim_2.setText("")
         self.label_PhotoUretim_2.setPixmap(QtGui.QPixmap(":/Menu/Icon/Elektrik.png"))
+        self.label_PhotoUretim_2.setMargin(20)
         self.label_PhotoUretim_2.setScaledContents(True)
         self.label_PhotoUretim_2.setObjectName("label_PhotoUretim_2")
         self.label_NameUretim_2 = QtWidgets.QLabel(self.frame_UretimGiris_2)
@@ -488,6 +491,7 @@ class Ui_MainWindow(object):
 "")
         self.label_PhotoDepo_2.setText("")
         self.label_PhotoDepo_2.setPixmap(QtGui.QPixmap(":/Menu/Icon/Depo.png"))
+        self.label_PhotoDepo_2.setMargin(30)
         self.label_PhotoDepo_2.setScaledContents(True)
         self.label_PhotoDepo_2.setObjectName("label_PhotoDepo_2")
         self.stackedWidget.addWidget(self.page_Depo)
@@ -495,7 +499,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.stackedWidget.setCurrentIndex(1)
+        self.stackedWidget.setCurrentIndex(0)
         self.Btn_Close.clicked.connect(MainWindow.close) # type: ignore
         self.Btn_Minimize.clicked.connect(MainWindow.showMinimized) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
