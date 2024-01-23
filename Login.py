@@ -9,7 +9,6 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QWidget
 
 
 class Ui_MainWindow(object):
@@ -123,6 +122,7 @@ class Ui_MainWindow(object):
         self.Main.setObjectName("Main")
         self.label_Background = QtWidgets.QLabel(self.Main)
         self.label_Background.setGeometry(QtCore.QRect(0, 0, 1200, 760))
+        self.label_Background.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.label_Background.setText("")
         self.label_Background.setPixmap(QtGui.QPixmap(":/Background/Icon/Login_Bg.png"))
         self.label_Background.setScaledContents(True)
@@ -148,26 +148,29 @@ class Ui_MainWindow(object):
         self.frame_Uretim = QtWidgets.QFrame(self.page_Login)
         self.frame_Uretim.setStyleSheet("border-top-right-radius: 0px;\n"
 "border-bottom-right-radius: 0px;\n"
-"background-color:rgba(2, 128, 144, 200); ")
+"background-color:rgba(2, 128, 144, 220); ")
         self.frame_Uretim.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_Uretim.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_Uretim.setObjectName("frame_Uretim")
-        self.label_PhotoUretim = QtWidgets.QLabel(self.frame_Uretim)
-        self.label_PhotoUretim.setGeometry(QtCore.QRect(125, 150, 150, 150))
+        self.label_photoUretim = QtWidgets.QLabel(self.frame_Uretim)
+        self.label_photoUretim.setGeometry(QtCore.QRect(125, 150, 150, 150))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.label_PhotoUretim.sizePolicy().hasHeightForWidth())
-        self.label_PhotoUretim.setSizePolicy(sizePolicy)
-        self.label_PhotoUretim.setMinimumSize(QtCore.QSize(150, 150))
-        self.label_PhotoUretim.setStyleSheet("background-color:rgba(2, 89, 100, 255);\n"
+        sizePolicy.setHeightForWidth(self.label_photoUretim.sizePolicy().hasHeightForWidth())
+        self.label_photoUretim.setSizePolicy(sizePolicy)
+        self.label_photoUretim.setMinimumSize(QtCore.QSize(150, 150))
+        self.label_photoUretim.setStyleSheet("background-color:rgba(255,255,255,255);\n"
 "border-radius: 75px;\n"
 "")
-        self.label_PhotoUretim.setText("")
-        self.label_PhotoUretim.setPixmap(QtGui.QPixmap(":/Menu/Icon/Elektrik.png"))
-        self.label_PhotoUretim.setScaledContents(True)
-        self.label_PhotoUretim.setMargin(20)
-        self.label_PhotoUretim.setObjectName("label_PhotoUretim")
+        self.label_photoUretim.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.label_photoUretim.setFrameShadow(QtWidgets.QFrame.Plain)
+        self.label_photoUretim.setLineWidth(1)
+        self.label_photoUretim.setMidLineWidth(0)
+        self.label_photoUretim.setText("")
+        self.label_photoUretim.setPixmap(QtGui.QPixmap(":/Menu/Icon/Elektrik.png"))
+        self.label_photoUretim.setScaledContents(True)
+        self.label_photoUretim.setObjectName("label_photoUretim")
         self.label_NameUretim = QtWidgets.QLabel(self.frame_Uretim)
         self.label_NameUretim.setGeometry(QtCore.QRect(125, 325, 150, 50))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
@@ -183,6 +186,7 @@ class Ui_MainWindow(object):
         self.label_NameUretim.setFont(font)
         self.label_NameUretim.setStyleSheet("background-color:rgba(0,0,0,0);\n"
 "color:rgb(255,255,255)")
+        self.label_NameUretim.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.label_NameUretim.setAlignment(QtCore.Qt.AlignCenter)
         self.label_NameUretim.setObjectName("label_NameUretim")
         self.horizontalLayout_4.addWidget(self.frame_Uretim)
@@ -224,7 +228,6 @@ class Ui_MainWindow(object):
         self.label_PhotoDepo.setText("")
         self.label_PhotoDepo.setPixmap(QtGui.QPixmap(":/Menu/Icon/Depo.png"))
         self.label_PhotoDepo.setScaledContents(True)
-        self.label_PhotoDepo.setMargin(30)
         self.label_PhotoDepo.setObjectName("label_PhotoDepo")
         self.horizontalLayout_4.addWidget(self.frame_Depo)
         self.stackedWidget.addWidget(self.page_Login)
@@ -310,6 +313,7 @@ class Ui_MainWindow(object):
         self.label_ForgotPassword.setObjectName("label_ForgotPassword")
         self.pushButton_BackUretim = QtWidgets.QPushButton(self.frame_UretimGiris)
         self.pushButton_BackUretim.setGeometry(QtCore.QRect(320, 30, 50, 50))
+        self.pushButton_BackUretim.setWhatsThis("")
         self.pushButton_BackUretim.setStyleSheet("background-color: rgba(252,252,252,255);\n"
 "border-radius: 15px;")
         self.pushButton_BackUretim.setText("")
@@ -340,7 +344,6 @@ class Ui_MainWindow(object):
         self.label_PhotoUretim_2.setText("")
         self.label_PhotoUretim_2.setPixmap(QtGui.QPixmap(":/Menu/Icon/Elektrik.png"))
         self.label_PhotoUretim_2.setScaledContents(True)
-        self.label_PhotoUretim_2.setMargin(20)
         self.label_PhotoUretim_2.setObjectName("label_PhotoUretim_2")
         self.label_NameUretim_2 = QtWidgets.QLabel(self.frame_UretimGiris_2)
         self.label_NameUretim_2.setGeometry(QtCore.QRect(125, 325, 150, 50))
@@ -472,9 +475,6 @@ class Ui_MainWindow(object):
 "")
         self.label_NameDepo_2.setAlignment(QtCore.Qt.AlignCenter)
         self.label_NameDepo_2.setObjectName("label_NameDepo_2")
-
-#-----------------------------------Label_PhotoDepo_2--------------------------------------
-        
         self.label_PhotoDepo_2 = QtWidgets.QLabel(self.frame_DepoGiris)
         self.label_PhotoDepo_2.setGeometry(QtCore.QRect(125, 150, 150, 150))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
@@ -489,19 +489,13 @@ class Ui_MainWindow(object):
         self.label_PhotoDepo_2.setText("")
         self.label_PhotoDepo_2.setPixmap(QtGui.QPixmap(":/Menu/Icon/Depo.png"))
         self.label_PhotoDepo_2.setScaledContents(True)
-        self.label_PhotoDepo_2.setMargin(30)
         self.label_PhotoDepo_2.setObjectName("label_PhotoDepo_2")
-
-#--------------------------------------Stacked Widget--------------------------------------
-        
         self.stackedWidget.addWidget(self.page_Depo)
         self.verticalLayout.addWidget(self.Main)
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.stackedWidget.setCurrentIndex(0)
-
-
+        self.stackedWidget.setCurrentIndex(1)
         self.Btn_Close.clicked.connect(MainWindow.close) # type: ignore
         self.Btn_Minimize.clicked.connect(MainWindow.showMinimized) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
@@ -719,25 +713,4 @@ class Ui_MainWindow(object):
         self.pushButton_LoginDepo.setText(_translate("MainWindow", "Login"))
         self.label_ForgotPassword_2.setText(_translate("MainWindow", "Forgot Password ?"))
         self.label_NameDepo_2.setText(_translate("MainWindow", "Depo"))
-
-#------------------------------------------------------------------------------------------
-    
-
-
 import Icon_rc
-from PyQt5.QtGui import *
-from PyQt5.QtCore import Qt,QPoint
-import sys
-from PyQt5.QtWidgets import *
-
-class FramelessWindow(QMainWindow):
-        def __init__(self):
-                super().__init__()
-                self.setWindowFlags(Qt.FramelessWindowHint)
-        
-app=QApplication(sys.argv)
-window=FramelessWindow()
-ui=Ui_MainWindow()
-ui.setupUi(window)
-window.show()
-sys.exit(app.exec_())
