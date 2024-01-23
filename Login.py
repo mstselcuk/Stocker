@@ -522,7 +522,7 @@ class Ui_MainWindow(object):
         self.label_ForgotPassword.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.label_ForgotPassword_2.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
 
-#-----------------------------------------Hover--------------------------------------------
+#-------------------------------------Hover and Click--------------------------------------
 
         self.frame_Uretim.enterEvent = lambda event: self.EnterHoverUretim()
         self.frame_Uretim.leaveEvent = lambda event: self.LeaveHoverUretim()
@@ -530,13 +530,28 @@ class Ui_MainWindow(object):
         self.frame_Depo.leaveEvent = lambda event: self.LeaveHoverDepo()
         self.pushButton_LoginUretim.enterEvent = lambda event: self.EnterHoverUretimLogin()
         self.pushButton_LoginUretim.leaveEvent = lambda event: self.LeaveHoverUretimLogin()
-        self.pushButton_LoginUretim.pressed.connect(lambda: self.pushButton_LoginUretim.setFont(QFont("Tahoma",14)))
-        self.pushButton_LoginUretim.released.connect(lambda: self.pushButton_LoginUretim.setFont(QFont("Tahoma",16)))
+        self.pushButton_LoginUretim.pressed.connect(lambda: self.PressedButtonFont())
+        self.pushButton_LoginUretim.released.connect(lambda: self.ReleasedButtonFont())
         self.pushButton_LoginDepo.enterEvent = lambda event: self.EnterHoverDepoLogin()
         self.pushButton_LoginDepo.leaveEvent = lambda event: self.LeaveHoverDepoLogin()
-        self.pushButton_LoginDepo.pressed.connect(lambda: self.pushButton_LoginDepo.setFont(QFont("Tahoma",14)))
-        self.pushButton_LoginDepo.released.connect(lambda: self.pushButton_LoginDepo.setFont(QFont("Tahoma",16)))
-
+        self.pushButton_LoginDepo.pressed.connect(lambda: self.PressedButtonFont())
+        self.pushButton_LoginDepo.released.connect(lambda: self.ReleasedButtonFont())
+        self.pushButton_BackDepo.pressed.connect(lambda: self.PressedBack())
+        self.pushButton_BackDepo.released.connect(lambda: self.ReleasedBack())
+        self.pushButton_BackUretim.pressed.connect(lambda: self.PressedBack())
+        self.pushButton_BackUretim.released.connect(lambda: self.ReleasedBack())          
+        self.pushButton_BackDepo.enterEvent = lambda event: self.EnterHoverBack()
+        self.pushButton_BackDepo.leaveEvent = lambda event: self.LeaveHoverBack()
+        self.pushButton_BackUretim.enterEvent = lambda event: self.EnterHoverBack()
+        self.pushButton_BackUretim.leaveEvent = lambda event: self.LeaveHoverBack()
+        self.Btn_Close.enterEvent = lambda event: self.EnterHoverClose()
+        self.Btn_Close.leaveEvent = lambda event: self.LeaveHoverClose()
+        self.Btn_Minimize.enterEvent = lambda event: self.EnterHoverMinimize()
+        self.Btn_Minimize.leaveEvent = lambda event: self.LeaveHoverMinimize()
+        self.label_ForgotPassword.enterEvent = lambda event: self.EnterHoverPassword()
+        self.label_ForgotPassword.leaveEvent = lambda event: self.LeaveHoverPassword()
+        self.label_ForgotPassword_2.enterEvent = lambda event: self.EnterHoverPassword_2()
+        self.label_ForgotPassword_2.leaveEvent = lambda event: self.LeaveHoverPassword_2()
 #-----------------------------------Choose Uretim or Depo----------------------------------
         
         self.frame_Uretim.mousePressEvent=lambda clickedMouse: self.ClickedUretim()
@@ -547,6 +562,22 @@ class Ui_MainWindow(object):
 
     def ClickedDepo(self):
         self.stackedWidget.setCurrentIndex(2)
+
+    def PressedButtonFont(self):
+        font = QtGui.QFont()
+        font.setFamily("Tahoma")
+        font.setPointSize(14)
+        font.setBold(True)
+        self.pushButton_LoginUretim.setFont(font)
+        self.pushButton_LoginDepo.setFont(font)
+    
+    def ReleasedButtonFont(self):
+        font = QtGui.QFont()
+        font.setFamily("Tahoma")
+        font.setPointSize(16)
+        font.setBold(True)
+        self.pushButton_LoginUretim.setFont(font)
+        self.pushButton_LoginDepo.setFont(font)
 
 #-------------------------------------Hover Function---------------------------------------
 
@@ -589,7 +620,7 @@ class Ui_MainWindow(object):
     def EnterHoverUretimLogin(self):
                 self.pushButton_LoginUretim.setStyleSheet("border-radius: 20px;\n"
 "background-color:rgba(2, 89, 100, 255); \n"
-"color: white;")
+"color: rgb(214, 214, 214);")
 
     def LeaveHoverUretimLogin(self):
                 self.pushButton_LoginUretim.setStyleSheet("border-radius: 20px;\n"
@@ -598,13 +629,77 @@ class Ui_MainWindow(object):
 
     def EnterHoverDepoLogin(self):
                 self.pushButton_LoginDepo.setStyleSheet("border-radius: 20px;\n"
-"background-color:rgba(235, 235, 235, 255); \n"
+"background-color:rgba(214, 214, 214, 255); \n"
 "color: rgba(2, 89, 100, 255); ")
 
     def LeaveHoverDepoLogin(self):
                 self.pushButton_LoginDepo.setStyleSheet("border-radius: 20px;\n"
 "background-color:rgba(252, 252, 252, 255); \n"
 "color: rgba(2, 128, 144, 255); ")
+
+    def PressedBack(self):
+                self.pushButton_BackDepo.setStyleSheet("background-color: rgba(214, 214, 214, 255);\n"
+"border-radius: 15px;")
+                self.pushButton_BackUretim.setStyleSheet("background-color: rgba(214, 214, 214, 255);\n"
+"border-radius: 15px;")
+
+    def ReleasedBack(self):
+                self.pushButton_BackDepo.setStyleSheet("background-color: rgba(252,252,252,255);\n"
+"border-radius: 15px;")
+                self.pushButton_BackUretim.setStyleSheet("background-color: rgba(252,252,252,255);\n"
+"border-radius: 15px;")
+                
+    def EnterHoverBack(self):
+                self.pushButton_BackDepo.setStyleSheet("background-color: rgba(235, 235, 235, 255);\n"
+"border-radius: 15px;")
+                self.pushButton_BackUretim.setStyleSheet("background-color: rgba(235, 235, 235, 255);\n"
+"border-radius: 15px;")
+
+    def LeaveHoverBack(self):
+                self.pushButton_BackDepo.setStyleSheet("background-color: rgba(252,252,252,255);\n"
+"border-radius: 15px;")
+                self.pushButton_BackUretim.setStyleSheet("background-color: rgba(252,252,252,255);\n"
+"border-radius: 15px;")
+                
+    def EnterHoverClose(self):
+                icon1 = QtGui.QIcon()
+                icon1.addPixmap(QtGui.QPixmap(":/Windows/Icon/close_hover.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+                self.Btn_Close.setIcon(icon1)
+                self.Btn_Close.setIconSize(QtCore.QSize(20, 20))
+
+    def LeaveHoverClose(self):
+                icon1 = QtGui.QIcon()
+                icon1.addPixmap(QtGui.QPixmap(":/Windows/Icon/close.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+                self.Btn_Close.setIcon(icon1)
+                self.Btn_Close.setIconSize(QtCore.QSize(20, 20))
+
+    def EnterHoverMinimize(self):
+                icon1 = QtGui.QIcon()
+                icon1.addPixmap(QtGui.QPixmap(":/Windows/Icon/minimize_hover.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+                self.Btn_Minimize.setIcon(icon1)
+                self.Btn_Minimize.setIconSize(QtCore.QSize(20, 20))
+    def LeaveHoverMinimize(self):
+                icon1 = QtGui.QIcon()
+                icon1.addPixmap(QtGui.QPixmap(":/Windows/Icon/minimize.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+                self.Btn_Minimize.setIcon(icon1)
+                self.Btn_Minimize.setIconSize(QtCore.QSize(20, 20))
+
+    def EnterHoverPassword(self):
+                self.label_ForgotPassword.setStyleSheet("background-color:rgba(2, 128, 144, 0); \n"
+"color: rgba(56, 129, 188, 255)")
+                
+    def LeaveHoverPassword(self):
+                self.label_ForgotPassword.setStyleSheet("background-color:rgba(2, 128, 144, 0); \n"
+"color: rgba(14, 32, 47, 255)")   
+                         
+    def EnterHoverPassword_2(self):
+                self.label_ForgotPassword_2.setStyleSheet("background-color:rgba(2, 128, 144, 0); \n"
+"color: rgba(255, 224, 153, 255)")
+                
+    def LeaveHoverPassword_2(self):
+                self.label_ForgotPassword_2.setStyleSheet("background-color:rgba(2, 128, 144, 0); \n"
+"color: rgba(14, 32, 47, 255)")  
+
 
 #------------------------------------------------------------------------------------------
 

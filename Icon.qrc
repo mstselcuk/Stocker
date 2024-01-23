@@ -1,8 +1,11 @@
 <RCC>
   <qresource prefix="Windows">
     <file>Icon/Maximize.png</file>
+    <file>Icon/Maximize_hover.png</file>
     <file>Icon/close.png</file>
+    <file>Icon/close_hover.png</file>
     <file>Icon/minimize.png</file>
+    <file>Icon/minimize_hover.png</file>
     <file>Icon/Logo.png</file>
   </qresource>
   <qresource prefix="Background">
