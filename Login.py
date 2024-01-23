@@ -580,7 +580,7 @@ class Ui_MainWindow(object):
 "border-bottom-right-radius: 0px;\n"
 "background-color:rgba(2, 128, 144, 255); ")
                 
-                self.label_PhotoUretim.setStyleSheet("background-color:rgba(255,255,255,255);\n"
+                self.label_photoUretim.setStyleSheet("background-color:rgba(255,255,255,255);\n"
 "border-radius: 75px;\n"
 "")
 
@@ -589,7 +589,7 @@ class Ui_MainWindow(object):
 "border-bottom-right-radius: 0px;\n"
 "background-color:rgba(2, 128, 144, 220); ")
                 
-                self.label_PhotoUretim.setStyleSheet("background-color:rgba(2, 89, 100, 255);\n"
+                self.label_photoUretim.setStyleSheet("background-color:rgba(2, 89, 100, 255);\n"
 "border-radius: 75px;\n"
 "")
 
@@ -714,3 +714,26 @@ class Ui_MainWindow(object):
         self.label_ForgotPassword_2.setText(_translate("MainWindow", "Forgot Password ?"))
         self.label_NameDepo_2.setText(_translate("MainWindow", "Depo"))
 import Icon_rc
+from PyQt5.QtGui import *
+from PyQt5.QtCore import Qt
+import sys
+from PyQt5.QtWidgets import *
+from Login import *
+
+class FramelessWindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
+
+        self.setWindowFlags(Qt.FramelessWindowHint)
+
+app=QApplication(sys.argv)
+window=FramelessWindow()
+ui=Ui_MainWindow()
+ui.setupUi(window)
+window.show()
+#--------------------------------------------------------------------------------------
+
+
+
+#-----------------------------------CLOSE APP------------------------------------------
+sys.exit(app.exec_())
