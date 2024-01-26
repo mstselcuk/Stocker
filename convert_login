@@ -1,0 +1,4 @@
+from PyQt5 import uic
+
+with open("Login.py","w",encoding="utf-8") as loginCevir:
+    uic.compileUi("Login.ui",loginCevir)

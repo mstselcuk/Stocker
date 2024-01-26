@@ -384,7 +384,7 @@ border:none;
                 <property name="bottomMargin">
                  <number>0</number>
                 </property>
-                <item>
+                <item alignment="Qt::AlignLeft">
                  <widget class="QToolButton" name="toolButton_AnaSayfa">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
@@ -394,7 +394,7 @@ border:none;
                   </property>
                   <property name="minimumSize">
                    <size>
-                    <width>22</width>
+                    <width>45</width>
                     <height>0</height>
                    </size>
                   </property>
@@ -451,13 +451,19 @@ background-color: rgb(2, 128, 144);
                   </property>
                  </widget>
                 </item>
-                <item>
+                <item alignment="Qt::AlignLeft">
                  <widget class="QToolButton" name="toolButton_StokArama">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>38</width>
+                    <height>0</height>
+                   </size>
                   </property>
                   <property name="maximumSize">
                    <size>
@@ -527,13 +533,19 @@ border:none;
                 <property name="bottomMargin">
                  <number>0</number>
                 </property>
-                <item>
+                <item alignment="Qt::AlignLeft">
                  <widget class="QToolButton" name="toolButton_NewReferance">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>43</width>
+                    <height>0</height>
+                   </size>
                   </property>
                   <property name="maximumSize">
                    <size>
@@ -565,13 +577,19 @@ border:none;
                   </property>
                  </widget>
                 </item>
-                <item>
+                <item alignment="Qt::AlignLeft">
                  <widget class="QToolButton" name="toolButton_DelReferance">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>43</width>
+                    <height>0</height>
+                   </size>
                   </property>
                   <property name="maximumSize">
                    <size>
@@ -638,7 +656,7 @@ border:none;
                 <property name="bottomMargin">
                  <number>0</number>
                 </property>
-                <item>
+                <item alignment="Qt::AlignLeft">
                  <widget class="QToolButton" name="toolButton_AddStock">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
@@ -646,10 +664,16 @@ border:none;
                     <verstretch>0</verstretch>
                    </sizepolicy>
                   </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>35</width>
+                    <height>0</height>
+                   </size>
+                  </property>
                   <property name="maximumSize">
                    <size>
                     <width>16777215</width>
-                    <height>40</height>
+                    <height>60</height>
                    </size>
                   </property>
                   <property name="cursor">
@@ -667,8 +691,8 @@ border:none;
                   </property>
                   <property name="iconSize">
                    <size>
-                    <width>50</width>
-                    <height>50</height>
+                    <width>35</width>
+                    <height>60</height>
                    </size>
                   </property>
                   <property name="popupMode">
@@ -682,7 +706,7 @@ border:none;
                   </property>
                  </widget>
                 </item>
-                <item>
+                <item alignment="Qt::AlignLeft">
                  <widget class="QToolButton" name="toolButton_DelStock">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
@@ -690,10 +714,16 @@ border:none;
                     <verstretch>0</verstretch>
                    </sizepolicy>
                   </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>35</width>
+                    <height>0</height>
+                   </size>
+                  </property>
                   <property name="maximumSize">
                    <size>
                     <width>16777215</width>
-                    <height>40</height>
+                    <height>60</height>
                    </size>
                   </property>
                   <property name="cursor">
@@ -711,8 +741,8 @@ border:none;
                   </property>
                   <property name="iconSize">
                    <size>
-                    <width>50</width>
-                    <height>50</height>
+                    <width>35</width>
+                    <height>60</height>
                    </size>
                   </property>
                   <property name="toolButtonStyle">
@@ -752,13 +782,19 @@ border:none;
                 <property name="bottomMargin">
                  <number>0</number>
                 </property>
-                <item>
+                <item alignment="Qt::AlignLeft">
                  <widget class="QToolButton" name="toolButton_Report">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>35</width>
+                    <height>0</height>
+                   </size>
                   </property>
                   <property name="maximumSize">
                    <size>
@@ -781,7 +817,7 @@ border:none;
                   </property>
                   <property name="iconSize">
                    <size>
-                    <width>35</width>
+                    <width>26</width>
                     <height>35</height>
                    </size>
                   </property>
@@ -790,13 +826,19 @@ border:none;
                   </property>
                  </widget>
                 </item>
-                <item>
+                <item alignment="Qt::AlignLeft">
                  <widget class="QToolButton" name="toolButton_Excel">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>35</width>
+                    <height>0</height>
+                   </size>
                   </property>
                   <property name="maximumSize">
                    <size>
@@ -886,13 +928,19 @@ border:none;
                 <property name="bottomMargin">
                  <number>0</number>
                 </property>
-                <item>
+                <item alignment="Qt::AlignLeft">
                  <widget class="QToolButton" name="toolButton_Info">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>35</width>
+                    <height>0</height>
+                   </size>
                   </property>
                   <property name="maximumSize">
                    <size>
