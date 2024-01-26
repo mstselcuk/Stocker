@@ -281,7 +281,7 @@ icon:
           <property name="bottomMargin">
            <number>0</number>
           </property>
-          <item>
+          <item alignment="Qt::AlignLeft">
            <widget class="QFrame" name="frame_Menu">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
@@ -291,13 +291,13 @@ icon:
             </property>
             <property name="minimumSize">
              <size>
-              <width>20</width>
+              <width>70</width>
               <height>0</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>150</width>
+              <width>160</width>
               <height>16777215</height>
              </size>
             </property>
@@ -346,15 +346,21 @@ background-color: rgb(2, 128, 144);
              <item alignment="Qt::AlignLeft">
               <widget class="QFrame" name="frame_Home">
                <property name="sizePolicy">
-                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
                  <horstretch>0</horstretch>
                  <verstretch>0</verstretch>
                 </sizepolicy>
                </property>
                <property name="minimumSize">
                 <size>
-                 <width>20</width>
+                 <width>60</width>
                  <height>0</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>160</width>
+                 <height>16777215</height>
                 </size>
                </property>
                <property name="styleSheet">
@@ -400,7 +406,7 @@ border:none;
                   </property>
                   <property name="maximumSize">
                    <size>
-                    <width>16777215</width>
+                    <width>150</width>
                     <height>40</height>
                    </size>
                   </property>
@@ -449,6 +455,9 @@ background-color: rgb(2, 128, 144);
                   <property name="toolButtonStyle">
                    <enum>Qt::ToolButtonIconOnly</enum>
                   </property>
+                  <property name="autoRaise">
+                   <bool>false</bool>
+                  </property>
                  </widget>
                 </item>
                 <item alignment="Qt::AlignLeft">
@@ -467,7 +476,7 @@ background-color: rgb(2, 128, 144);
                   </property>
                   <property name="maximumSize">
                    <size>
-                    <width>16777215</width>
+                    <width>150</width>
                     <height>40</height>
                    </size>
                   </property>
@@ -502,8 +511,14 @@ background-color: rgb(2, 128, 144);
               <widget class="QFrame" name="frame_Referance">
                <property name="minimumSize">
                 <size>
-                 <width>20</width>
+                 <width>60</width>
                  <height>0</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>160</width>
+                 <height>16777215</height>
                 </size>
                </property>
                <property name="styleSheet">
@@ -549,7 +564,7 @@ border:none;
                   </property>
                   <property name="maximumSize">
                    <size>
-                    <width>16777215</width>
+                    <width>150</width>
                     <height>40</height>
                    </size>
                   </property>
@@ -593,7 +608,7 @@ border:none;
                   </property>
                   <property name="maximumSize">
                    <size>
-                    <width>16777215</width>
+                    <width>150</width>
                     <height>40</height>
                    </size>
                   </property>
@@ -629,6 +644,18 @@ border:none;
              </item>
              <item alignment="Qt::AlignLeft">
               <widget class="QFrame" name="frame_Stock">
+               <property name="minimumSize">
+                <size>
+                 <width>60</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>160</width>
+                 <height>16777215</height>
+                </size>
+               </property>
                <property name="styleSheet">
                 <string notr="true">*{
 border:none;
@@ -755,6 +782,18 @@ border:none;
              </item>
              <item alignment="Qt::AlignLeft">
               <widget class="QFrame" name="frame_Report">
+               <property name="minimumSize">
+                <size>
+                 <width>60</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>160</width>
+                 <height>16777215</height>
+                </size>
+               </property>
                <property name="styleSheet">
                 <string notr="true">*{
 border:none;
@@ -798,7 +837,7 @@ border:none;
                   </property>
                   <property name="maximumSize">
                    <size>
-                    <width>16777215</width>
+                    <width>150</width>
                     <height>40</height>
                    </size>
                   </property>
@@ -842,7 +881,7 @@ border:none;
                   </property>
                   <property name="maximumSize">
                    <size>
-                    <width>16777215</width>
+                    <width>150</width>
                     <height>40</height>
                    </size>
                   </property>
@@ -891,13 +930,13 @@ disabled off
                </property>
                <property name="minimumSize">
                 <size>
-                 <width>20</width>
+                 <width>60</width>
                  <height>0</height>
                 </size>
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>16777215</width>
+                 <width>160</width>
                  <height>100</height>
                 </size>
                </property>
@@ -944,7 +983,7 @@ border:none;
                   </property>
                   <property name="maximumSize">
                    <size>
-                    <width>16777215</width>
+                    <width>150</width>
                     <height>40</height>
                    </size>
                   </property>
