@@ -9,6 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QMessageBox
 
 
 class Ui_MainWindow(object):
@@ -520,24 +521,16 @@ class Ui_MainWindow(object):
         self.label_ForgotPassword.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.label_ForgotPassword_2.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
 
-#-------------------------------------Hover and Click--------------------------------------
-
+#-------------------------------------------Hover-------------------------------------------
+        
         self.frame_Uretim.enterEvent = lambda event: self.EnterHoverUretim()
         self.frame_Uretim.leaveEvent = lambda event: self.LeaveHoverUretim()
         self.frame_Depo.enterEvent = lambda event: self.EnterHoverDepo()
         self.frame_Depo.leaveEvent = lambda event: self.LeaveHoverDepo()
         self.pushButton_LoginUretim.enterEvent = lambda event: self.EnterHoverUretimLogin()
         self.pushButton_LoginUretim.leaveEvent = lambda event: self.LeaveHoverUretimLogin()
-        self.pushButton_LoginUretim.pressed.connect(lambda: self.PressedButtonFont())
-        self.pushButton_LoginUretim.released.connect(lambda: self.ReleasedButtonFont())
         self.pushButton_LoginDepo.enterEvent = lambda event: self.EnterHoverDepoLogin()
         self.pushButton_LoginDepo.leaveEvent = lambda event: self.LeaveHoverDepoLogin()
-        self.pushButton_LoginDepo.pressed.connect(lambda: self.PressedButtonFont())
-        self.pushButton_LoginDepo.released.connect(lambda: self.ReleasedButtonFont())
-        self.pushButton_BackDepo.pressed.connect(lambda: self.PressedBack())
-        self.pushButton_BackDepo.released.connect(lambda: self.ReleasedBack())
-        self.pushButton_BackUretim.pressed.connect(lambda: self.PressedBack())
-        self.pushButton_BackUretim.released.connect(lambda: self.ReleasedBack())          
         self.pushButton_BackDepo.enterEvent = lambda event: self.EnterHoverBack()
         self.pushButton_BackDepo.leaveEvent = lambda event: self.LeaveHoverBack()
         self.pushButton_BackUretim.enterEvent = lambda event: self.EnterHoverBack()
@@ -550,10 +543,24 @@ class Ui_MainWindow(object):
         self.label_ForgotPassword.leaveEvent = lambda event: self.LeaveHoverPassword()
         self.label_ForgotPassword_2.enterEvent = lambda event: self.EnterHoverPassword_2()
         self.label_ForgotPassword_2.leaveEvent = lambda event: self.LeaveHoverPassword_2()
+
+#------------------------------------------Click-------------------------------------------
+        
+        self.pushButton_LoginUretim.pressed.connect(lambda: self.PressedButtonFont())
+        self.pushButton_LoginUretim.released.connect(lambda: self.ReleasedButtonFont())
+        self.pushButton_LoginDepo.pressed.connect(lambda: self.PressedButtonFont())
+        self.pushButton_LoginDepo.released.connect(lambda: self.ReleasedButtonFont())
+        self.pushButton_BackDepo.pressed.connect(lambda: self.PressedBack())
+        self.pushButton_BackDepo.released.connect(lambda: self.ReleasedBack())
+        self.pushButton_BackUretim.pressed.connect(lambda: self.PressedBack())
+        self.pushButton_BackUretim.released.connect(lambda: self.ReleasedBack())       
+        self.label_ForgotPassword.mousePressEvent = lambda event: self.MessageBox()
+        self.label_ForgotPassword_2.mousePressEvent = lambda event: self.MessageBox()
+
 #-----------------------------------Choose Uretim or Depo----------------------------------
         
-        self.frame_Uretim.mousePressEvent=lambda clickedMouse: self.ClickedUretim()
-        self.frame_Depo.mousePressEvent=lambda clickedMouse: self.ClickedDepo()
+        self.frame_Uretim.mousePressEvent = lambda clickedMouse: self.ClickedUretim()
+        self.frame_Depo.mousePressEvent = lambda clickedMouse: self.ClickedDepo()
 
     def ClickedUretim(self):
         self.stackedWidget.setCurrentIndex(1)
@@ -717,6 +724,22 @@ class Ui_MainWindow(object):
         self.pushButton_LoginDepo.setText(_translate("MainWindow", "Login"))
         self.label_ForgotPassword_2.setText(_translate("MainWindow", "Forgot Password ?"))
         self.label_NameDepo_2.setText(_translate("MainWindow", "Depo"))
+
+#---------------------------------------Message Box----------------------------------------
+        
+    def MessageBox(self):
+        msg=QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Forgot Password")
+        msg.setWindowIcon(QIcon(":/Windows/Icon/Logo.png"))
+        msg.setText("""Lütfen Yetkili kişi ile görüşün...
+                    
+İletişim : mesut.selcuk45@gmail.com""")
+        msg.setStandardButtons(QMessageBox.Ok)
+        msg.exec_()
+
+#------------------------------------------------------------------------------------------
+        
 import Icon_rc
 from PyQt5.QtGui import *
 from PyQt5.QtCore import Qt
