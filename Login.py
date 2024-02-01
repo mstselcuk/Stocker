@@ -5,6 +5,8 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import *
 from Login import *
 import sys
+import sqlite3 as sql
+import datetime as date
 import Icon_rc
 
 
@@ -260,7 +262,7 @@ class Ui_MainWindow(object):
 "padding: 5px, 5px 10px, 10px;")
         self.lineEdit_UsernameUretim.setMaxLength(10)
         self.lineEdit_UsernameUretim.setCursorPosition(7)
-        self.lineEdit_UsernameUretim.setReadOnly(True)
+        self.lineEdit_UsernameUretim.setReadOnly(False)
         self.lineEdit_UsernameUretim.setPlaceholderText("")
         self.lineEdit_UsernameUretim.setObjectName("lineEdit_UsernameUretim")
         self.verticalLayout_2.addWidget(self.lineEdit_UsernameUretim)
@@ -393,7 +395,7 @@ class Ui_MainWindow(object):
 "padding: 5px, 5px 10px, 10px;")
         self.lineEdit_UsernameDepo.setMaxLength(10)
         self.lineEdit_UsernameDepo.setCursorPosition(7)
-        self.lineEdit_UsernameDepo.setReadOnly(True)
+        self.lineEdit_UsernameDepo.setReadOnly(False)
         self.lineEdit_UsernameDepo.setPlaceholderText("")
         self.lineEdit_UsernameDepo.setObjectName("lineEdit_UsernameDepo")
         self.verticalLayout_3.addWidget(self.lineEdit_UsernameDepo)
@@ -544,8 +546,10 @@ class Ui_MainWindow(object):
         
         self.pushButton_LoginUretim.pressed.connect(lambda: self.PressedButtonFont())
         self.pushButton_LoginUretim.released.connect(lambda: self.ReleasedButtonFont())
+        self.pushButton_LoginUretim.clicked.connect(lambda: self.GirisIslemi())
         self.pushButton_LoginDepo.pressed.connect(lambda: self.PressedButtonFont())
         self.pushButton_LoginDepo.released.connect(lambda: self.ReleasedButtonFont())
+        self.pushButton_LoginDepo.clicked.connect(lambda: self.GirisIslemi())
         self.pushButton_BackDepo.pressed.connect(lambda: self.PressedBack())
         self.pushButton_BackDepo.released.connect(lambda: self.ReleasedBack())
         self.pushButton_BackUretim.pressed.connect(lambda: self.PressedBack())
@@ -559,9 +563,13 @@ class Ui_MainWindow(object):
         self.frame_Depo.mousePressEvent = lambda clickedMouse: self.ClickedDepo()
 
     def ClickedUretim(self):
+        self.lineEdit_UsernameUretim.setText("")
+        self.lineEdit_PasswordUretim.setText("")
         self.stackedWidget.setCurrentIndex(1)
 
     def ClickedDepo(self):
+        self.lineEdit_UsernameDepo.setText("")
+        self.lineEdit_PasswordDepo.setText("")
         self.stackedWidget.setCurrentIndex(2)
 
     def PressedButtonFont(self):
@@ -710,12 +718,12 @@ class Ui_MainWindow(object):
         self.label_ProgramTitle.setText(_translate("MainWindow", "Stocker"))
         self.label_NameUretim.setText(_translate("MainWindow", "Üretim"))
         self.label_NameDepo.setText(_translate("MainWindow", "Depo"))
-        self.lineEdit_UsernameUretim.setText(_translate("MainWindow", "EM Pano"))
+        self.lineEdit_UsernameUretim.setPlaceholderText(_translate("MainWindow", "EM Pano"))
         self.lineEdit_PasswordUretim.setPlaceholderText(_translate("MainWindow", "Password"))
         self.pushButton_LoginUretim.setText(_translate("MainWindow", "Login"))
         self.label_ForgotPassword.setText(_translate("MainWindow", "Forgot Password ?"))
         self.label_NameUretim_2.setText(_translate("MainWindow", "Üretim"))
-        self.lineEdit_UsernameDepo.setText(_translate("MainWindow", "EM Depo"))
+        self.lineEdit_UsernameDepo.setPlaceholderText(_translate("MainWindow", "EM Depo"))
         self.lineEdit_PasswordDepo.setPlaceholderText(_translate("MainWindow", "Password"))
         self.pushButton_LoginDepo.setText(_translate("MainWindow", "Login"))
         self.label_ForgotPassword_2.setText(_translate("MainWindow", "Forgot Password ?"))
@@ -734,6 +742,46 @@ class Ui_MainWindow(object):
         msg.setStandardButtons(QMessageBox.Ok)
         msg.exec_()     
 
+#------------------------------------GİRİŞ İŞLEMLERİ---------------------------------------
+
+    def GirisIslemi(self):
+        Login_db = sql.connect(r"C:\Users\Mesut\Desktop\Stocker\Login\Login.sqlite")
+        im = Login_db.cursor()
+        im.execute("CREATE TABLE IF NOT EXISTS Login(No INTEGER NOT NULL UNIQUE, Username UNIQUE NOT NULL, Password NOT NULL, PRIMARY KEY(No AUTOINCREMENT))")
+
+        GirisUsername = self.lineEdit_UsernameDepo.text() or self.lineEdit_UsernameUretim.text()
+        GirisPassword = self.lineEdit_PasswordDepo.text() or self.lineEdit_PasswordUretim.text()
+        
+        try:
+                db_Password = im.execute("SELECT Password FROM Login WHERE Username='%s'"%(GirisUsername)).fetchone()
+                if db_Password[0] == GirisPassword:
+                        msg=QMessageBox()
+                        msg.setIcon(QMessageBox.Information)
+                        msg.setWindowTitle("Login Success")
+                        msg.setWindowIcon(QIcon(":/Windows/Icon/Logo.png"))
+                        msg.setText("Giris Yapıldı")
+                        msg.setStandardButtons(QMessageBox.Ok)
+                        msg.exec_()  
+
+                else:
+                        msg=QMessageBox()
+                        msg.setIcon(QMessageBox.Information)
+                        msg.setWindowTitle("Hatali Giris")
+                        msg.setWindowIcon(QIcon(":/Windows/Icon/Logo.png"))
+                        msg.setText("Şifre Hatalı")
+                        msg.setStandardButtons(QMessageBox.Ok)
+                        msg.exec_()  
+
+        except Exception:
+                        msg=QMessageBox()
+                        msg.setIcon(QMessageBox.Information)
+                        msg.setWindowTitle("Hatali Giris")
+                        msg.setWindowIcon(QIcon(":/Windows/Icon/Logo.png"))
+                        msg.setText("Kullanıcı Adı Hatalı")
+                        msg.setStandardButtons(QMessageBox.Ok)
+                        msg.exec_()                  
+
+
 #--------------------------------------START APP-------------------------------------------
 
 class FramelessWindow(QMainWindow):
@@ -749,6 +797,7 @@ ui.setupUi(window)
 window.show()
 
 #----------------------------------------MAIN----------------------------------------------
+
 
 
 
