@@ -751,7 +751,7 @@ class Ui_MainWindow(object):
 #------------------------------------GİRİŞ İŞLEMLERİ---------------------------------------
 
     def GirisIslemi(self):
-        Login_db = sql.connect(r"C:\Users\Mesut\Desktop\Stocker\Login\Login.sqlite")
+        Login_db = sql.connect(r".\Login\Login.sqlite")
         im = Login_db.cursor()
         im.execute("CREATE TABLE IF NOT EXISTS Login(No INTEGER NOT NULL UNIQUE, Username UNIQUE NOT NULL, Password NOT NULL, PRIMARY KEY(No AUTOINCREMENT))")
 
