@@ -260,7 +260,7 @@ class Ui_MainWindow(object):
 "background-color: rgba(14, 32, 47, 255);\n"
 "color:rgb(252, 252, 252);\n"
 "padding: 5px, 5px 10px, 10px;")
-        self.lineEdit_UsernameUretim.setMaxLength(10)
+        self.lineEdit_UsernameUretim.setMaxLength(20)
         self.lineEdit_UsernameUretim.setCursorPosition(7)
         self.lineEdit_UsernameUretim.setReadOnly(False)
         self.lineEdit_UsernameUretim.setPlaceholderText("")
@@ -393,7 +393,7 @@ class Ui_MainWindow(object):
 "background-color: rgba(252,252,252, 255);\n"
 "color:rgb(14, 32, 47);\n"
 "padding: 5px, 5px 10px, 10px;")
-        self.lineEdit_UsernameDepo.setMaxLength(10)
+        self.lineEdit_UsernameDepo.setMaxLength(20)
         self.lineEdit_UsernameDepo.setCursorPosition(7)
         self.lineEdit_UsernameDepo.setReadOnly(False)
         self.lineEdit_UsernameDepo.setPlaceholderText("")
@@ -503,6 +503,9 @@ class Ui_MainWindow(object):
         self.Btn_Minimize.clicked.connect(MainWindow.showMinimized) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
+
+#------------------------------------------MAIN--------------------------------------------
+        
 #---------------------------------------Back Button----------------------------------------
 
         self.pushButton_BackUretim.clicked.connect(lambda back: self.stackedWidget.setCurrentIndex(0))
@@ -561,16 +564,19 @@ class Ui_MainWindow(object):
         
         self.frame_Uretim.mousePressEvent = lambda clickedMouse: self.ClickedUretim()
         self.frame_Depo.mousePressEvent = lambda clickedMouse: self.ClickedDepo()
+        self.ChooseDb=0
 
     def ClickedUretim(self):
         self.lineEdit_UsernameUretim.setText("")
         self.lineEdit_PasswordUretim.setText("")
         self.stackedWidget.setCurrentIndex(1)
+        self.ChooseDb = 1
 
     def ClickedDepo(self):
         self.lineEdit_UsernameDepo.setText("")
         self.lineEdit_PasswordDepo.setText("")
         self.stackedWidget.setCurrentIndex(2)
+        self.ChooseDb = 2
 
     def PressedButtonFont(self):
         font = QtGui.QFont()
@@ -762,7 +768,10 @@ class Ui_MainWindow(object):
                         msg.setText("Giris Yapıldı")
                         msg.setStandardButtons(QMessageBox.Ok)
                         msg.exec_()  
-
+                        if self.ChooseDb == 1:
+                                pass
+                        else:
+                                pass
                 else:
                         msg=QMessageBox()
                         msg.setIcon(QMessageBox.Information)
@@ -795,11 +804,6 @@ window=FramelessWindow()
 ui=Ui_MainWindow()
 ui.setupUi(window)
 window.show()
-
-#----------------------------------------MAIN----------------------------------------------
-
-
-
 
 #--------------------------------------CLOSE APP-------------------------------------------
 
