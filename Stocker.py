@@ -581,7 +581,7 @@ class Ui_Stocker(object):
         self.label_Exit.setText("")
         self.label_Exit.setObjectName("label_Exit")
         self.formLayout_2.setWidget(0, QtWidgets.QFormLayout.LabelRole, self.label_Exit)
-        self.verticalLayout_3.addWidget(self.frame_Exit)
+        self.verticalLayout_3.addWidget(self.frame_Exit, 0, QtCore.Qt.AlignBottom)
         self.horizontalLayout_4.addWidget(self.frame_Menu, 0, QtCore.Qt.AlignLeft)
         self.frame_Page = QtWidgets.QFrame(self.Main)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
