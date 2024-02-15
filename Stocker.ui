@@ -1200,7 +1200,7 @@ min-height: 40px;</string>
                </layout>
               </widget>
              </item>
-             <item alignment="Qt::AlignHCenter|Qt::AlignBottom">
+             <item>
               <widget class="QFrame" name="frame_Exit">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
