@@ -4,6 +4,7 @@ from PyQt5.QtGui import *
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import *
 from Login import *
+from Stocker import *
 import sys
 import sqlite3 as sql
 import datetime as date
@@ -767,11 +768,11 @@ class Ui_MainWindow(object):
                         msg.setWindowIcon(QIcon(":/Windows/Icon/Logo.png"))
                         msg.setText("Giris Yapıldı")
                         msg.setStandardButtons(QMessageBox.Ok)
-                        msg.exec_()  
+                        msg.exec_()
                         if self.ChooseDb == 1:
-                                pass
+                                PanoDB()
                         else:
-                                pass
+                                DepoDB()
                 else:
                         msg=QMessageBox()
                         msg.setIcon(QMessageBox.Information)
@@ -788,7 +789,7 @@ class Ui_MainWindow(object):
                         msg.setWindowIcon(QIcon(":/Windows/Icon/Logo.png"))
                         msg.setText("Kullanıcı Adı Hatalı")
                         msg.setStandardButtons(QMessageBox.Ok)
-                        msg.exec_()                  
+                        msg.exec_()
 
 
 #--------------------------------------START APP-------------------------------------------
@@ -804,6 +805,14 @@ window=FramelessWindow()
 ui=Ui_MainWindow()
 ui.setupUi(window)
 window.show()
+
+def PanoDB():
+        window.close()
+        ui=Ui_Stocker()
+        ui.setupUi(window)
+        window.show()
+def DepoDB():
+        pass
 
 #--------------------------------------CLOSE APP-------------------------------------------
 

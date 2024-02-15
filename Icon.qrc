@@ -10,9 +10,21 @@
   </qresource>
   <qresource prefix="Background">
     <file>Icon/Login_Bg.png</file>
+    <file>Icon/Referans Ekle.jpg</file>
   </qresource>
   <qresource prefix="Menu">
+    <file>Icon/Acık_Siparis.png</file>
+    <file>Icon/Müsteriler.png</file>
+    <file>Icon/Uyarı.png</file>
+    <file>Icon/Tamam.Siparis.png</file>
+    <file>Icon/Github.png</file>
+    <file>Icon/Exit.png</file>
+    <file>Icon/Github_Hover.png</file>
+    <file>Icon/Linkedin.png</file>
+    <file>Icon/Down_Arrow.png</file>
+    <file>Icon/Linkedin_Hover.png</file>
     <file>Icon/Arrow.png</file>
+    <file>Icon/Project.png</file>
     <file>Icon/Depo.png</file>
     <file>Icon/Elektrik.png</file>
     <file>Icon/info.png</file>
