@@ -2,7 +2,8 @@ from PyQt5.QtGui import *
 from PyQt5.QtCore import Qt,QPoint
 import sys
 from PyQt5.QtWidgets import *
-from Stocker import *
+from Login import *
+
 
 #-----------------------------------FRAMELESS WİNDOW-----------------------------------
 class FramelessWindow(QMainWindow):
@@ -29,12 +30,18 @@ class FramelessWindow(QMainWindow):
 #-----------------------------------START APP------------------------------------------
 app=QApplication(sys.argv)
 window=FramelessWindow()
-ui=Ui_Stocker()
+ui=Ui_Login()
 ui.setupUi(window)
 window.show()
-#--------------------------------------------------------------------------------------
+#-------------------------------------MAIN---------------------------------------------
 
 
 
+
+
+
+
+
+    
 #-----------------------------------CLOSE APP------------------------------------------
 sys.exit(app.exec_())

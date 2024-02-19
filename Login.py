@@ -11,11 +11,11 @@ import datetime as date
 import Icon_rc
 
 
-class Ui_MainWindow(object):
-    def setupUi(self, MainWindow):
-        MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1200, 800)
-        self.centralwidget = QtWidgets.QWidget(MainWindow)
+class Ui_Login(object):
+    def setupUi(self, Login):
+        Login.setObjectName("Login")
+        Login.resize(1200, 800)
+        self.centralwidget = QtWidgets.QWidget(Login)
         self.centralwidget.setObjectName("centralwidget")
         self.Background = QtWidgets.QFrame(self.centralwidget)
         self.Background.setGeometry(QtCore.QRect(0, 0, 1200, 800))
@@ -496,13 +496,13 @@ class Ui_MainWindow(object):
         self.label_PhotoDepo_2.setObjectName("label_PhotoDepo_2")
         self.stackedWidget.addWidget(self.page_Depo)
         self.verticalLayout.addWidget(self.Main)
-        MainWindow.setCentralWidget(self.centralwidget)
+        Login.setCentralWidget(self.centralwidget)
 
-        self.retranslateUi(MainWindow)
+        self.retranslateUi(Login)
         self.stackedWidget.setCurrentIndex(0)
-        self.Btn_Close.clicked.connect(MainWindow.close) # type: ignore
-        self.Btn_Minimize.clicked.connect(MainWindow.showMinimized) # type: ignore
-        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+        self.Btn_Close.clicked.connect(Login.close) # type: ignore
+        self.Btn_Minimize.clicked.connect(Login.showMinimized) # type: ignore
+        QtCore.QMetaObject.connectSlotsByName(Login)
 
 
 #------------------------------------------MAIN--------------------------------------------
@@ -719,22 +719,22 @@ class Ui_MainWindow(object):
 
 #------------------------------------------------------------------------------------------
 
-    def retranslateUi(self, MainWindow):
+    def retranslateUi(self, Login):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.label_ProgramTitle.setText(_translate("MainWindow", "Stocker"))
-        self.label_NameUretim.setText(_translate("MainWindow", "Üretim"))
-        self.label_NameDepo.setText(_translate("MainWindow", "Depo"))
-        self.lineEdit_UsernameUretim.setPlaceholderText(_translate("MainWindow", "EM Pano"))
-        self.lineEdit_PasswordUretim.setPlaceholderText(_translate("MainWindow", "Password"))
-        self.pushButton_LoginUretim.setText(_translate("MainWindow", "Login"))
-        self.label_ForgotPassword.setText(_translate("MainWindow", "Forgot Password ?"))
-        self.label_NameUretim_2.setText(_translate("MainWindow", "Üretim"))
-        self.lineEdit_UsernameDepo.setPlaceholderText(_translate("MainWindow", "EM Depo"))
-        self.lineEdit_PasswordDepo.setPlaceholderText(_translate("MainWindow", "Password"))
-        self.pushButton_LoginDepo.setText(_translate("MainWindow", "Login"))
-        self.label_ForgotPassword_2.setText(_translate("MainWindow", "Forgot Password ?"))
-        self.label_NameDepo_2.setText(_translate("MainWindow", "Depo"))
+        Login.setWindowTitle(_translate("Login", "Login"))
+        self.label_ProgramTitle.setText(_translate("Login", "Stocker"))
+        self.label_NameUretim.setText(_translate("Login", "Üretim"))
+        self.label_NameDepo.setText(_translate("Login", "Depo"))
+        self.lineEdit_UsernameUretim.setPlaceholderText(_translate("Login", "EM Pano"))
+        self.lineEdit_PasswordUretim.setPlaceholderText(_translate("Login", "Password"))
+        self.pushButton_LoginUretim.setText(_translate("Login", "Login"))
+        self.label_ForgotPassword.setText(_translate("Login", "Forgot Password ?"))
+        self.label_NameUretim_2.setText(_translate("Login", "Üretim"))
+        self.lineEdit_UsernameDepo.setPlaceholderText(_translate("Login", "EM Depo"))
+        self.lineEdit_PasswordDepo.setPlaceholderText(_translate("Login", "Password"))
+        self.pushButton_LoginDepo.setText(_translate("Login", "Login"))
+        self.label_ForgotPassword_2.setText(_translate("Login", "Forgot Password ?"))
+        self.label_NameDepo_2.setText(_translate("Login", "Depo"))
 
 #---------------------------------------Message Box----------------------------------------
         
@@ -802,7 +802,7 @@ class FramelessWindow(QMainWindow):
 
 app=QApplication(sys.argv)
 window=FramelessWindow()
-ui=Ui_MainWindow()
+ui=Ui_Login()
 ui.setupUi(window)
 window.show()
 
@@ -812,7 +812,10 @@ def PanoDB():
         ui.setupUi(window)
         window.show()
 def DepoDB():
-        pass
+        window.close()
+        ui=Ui_Stocker()
+        ui.setupUi(window)
+        window.show()
 
 #--------------------------------------CLOSE APP-------------------------------------------
 

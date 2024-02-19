@@ -9,7 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+from PyQt5.QtGui import QColor, QPalette
 
 class Ui_Stocker(object):
     def setupUi(self, Stocker):
@@ -190,7 +190,7 @@ class Ui_Stocker(object):
         self.label_Anasayfa.setSizePolicy(sizePolicy)
         self.label_Anasayfa.setMinimumSize(QtCore.QSize(5, 40))
         self.label_Anasayfa.setMaximumSize(QtCore.QSize(5, 40))
-        self.label_Anasayfa.setStyleSheet("background-color:rgba(2, 128, 144, 255);\n"
+        self.label_Anasayfa.setStyleSheet("background-color:rgba(2, 128, 144, 0);\n"
 "border-radius: 1px;\n"
 "min-width: 5px;\n"
 "min-height: 40px;")
@@ -1536,7 +1536,7 @@ class Ui_Stocker(object):
         self.listWidget_SC_Secim.setSelectionMode(QtWidgets.QAbstractItemView.SingleSelection)
         self.listWidget_SC_Secim.setObjectName("listWidget_SC_Secim")
         self.verticalLayout_13.addWidget(self.listWidget_SC_Secim)
-        self.horizontalLayout_12.addWidget(self.frame_SC_Secim)
+        self.horizontalLayout_12.addWidget(self.frame_SC_Secim, 0, QtCore.Qt.AlignLeft)
         self.frame_StokCikar = QtWidgets.QFrame(self.page_StokCikar)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
@@ -2174,17 +2174,71 @@ class Ui_Stocker(object):
         self.stackedWidget_Buttons.setCurrentIndex(0)
         self.Btn_Close.clicked.connect(Stocker.close) # type: ignore
 
+#-----------------------------------Windows Button-----------------------------------------
         self.sayac=0
         self.Btn_Maximize.clicked.connect(lambda:self.Sayac(Stocker)) # type: ignore
         self.Btn_Minimize.clicked.connect(Stocker.showMinimized) # type: ignore
         self.toolButton_AnaSayfa.clicked.connect(self.toolButton_AnaSayfa.setFocus) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(Stocker)
 
-#-----------------------------------Hover Effect-------------------------------------------
-        self.frame_Menu.enterEvent=lambda event: self.EnterHover()
-        self.frame_Menu.leaveEvent=lambda event: self.LeaveHover()
+#---------------------------------------Click----------------------------------------------
+
+        self.toolButton_AnaSayfa.clicked.connect(lambda: self.clickedIndicator(self.label_Anasayfa,0))
+        self.toolButton_StokArama.clicked.connect(lambda: self.clickedIndicator(self.label_StokArama,1))
+        self.toolButton_NewReferance.clicked.connect(lambda: self.clickedIndicator(self.label_NewReferance,2))
+        self.toolButton_DelReferance.clicked.connect(lambda: self.clickedIndicator(self.label_DelReferance,3))
+        self.toolButton_AddStock.clicked.connect(lambda: self.clickedIndicator(self.label_AddStock,4))
+        self.toolButton_DelStock.clicked.connect(lambda: self.clickedIndicator(self.label_DelStock,5))
+        self.toolButton_Report.clicked.connect(lambda: self.clickedIndicator(self.label_Report,6))
+        self.toolButton_Project.clicked.connect(lambda: self.clickedIndicator(self.label_Project,7))
+        self.toolButton_Excel.clicked.connect(lambda: self.clickedIndicator(self.label_Excel,8))
+        self.toolButton_Info.clicked.connect(lambda: self.clickedIndicator(self.label_Info,9))
+
+#----------------------------------------Hover---------------------------------------------
+        self.frame_Menu.enterEvent = lambda event: self.EnterHover()
+        self.frame_Menu.leaveEvent = lambda event: self.LeaveHover()
+        self.Btn_Close.enterEvent = lambda event: self.EnterHoverClose()
+        self.Btn_Close.leaveEvent = lambda event: self.LeaveHoverClose()
+        self.Btn_Maximize.enterEvent = lambda event: self.EnterHoverMaximize()        
+        self.Btn_Maximize.leaveEvent = lambda event: self.LeaveHoverMaximize()
+        self.Btn_Minimize.enterEvent = lambda event: self.EnterHoverMinimize()
+        self.Btn_Minimize.leaveEvent = lambda event: self.LeaveHoverMinimize()
+
+#---------------------------------Windows Hover Function-----------------------------------
+    def EnterHoverClose(self):
+                icon1 = QtGui.QIcon()
+                icon1.addPixmap(QtGui.QPixmap(":/Windows/Icon/close_hover.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+                self.Btn_Close.setIcon(icon1)
+                self.Btn_Close.setIconSize(QtCore.QSize(20, 20))
+    def LeaveHoverClose(self):
+                icon1 = QtGui.QIcon()
+                icon1.addPixmap(QtGui.QPixmap(":/Windows/Icon/close.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+                self.Btn_Close.setIcon(icon1)
+                self.Btn_Close.setIconSize(QtCore.QSize(20, 20))
+
+    def EnterHoverMaximize(self):
+                icon1 = QtGui.QIcon()
+                icon1.addPixmap(QtGui.QPixmap(":/Windows/Icon/Maximize_hover.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+                self.Btn_Maximize.setIcon(icon1)
+                self.Btn_Maximize.setIconSize(QtCore.QSize(20, 20))
+    def LeaveHoverMaximize(self):
+                icon1 = QtGui.QIcon()
+                icon1.addPixmap(QtGui.QPixmap(":/Windows/Icon/Maximize.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+                self.Btn_Maximize.setIcon(icon1)
+                self.Btn_Maximize.setIconSize(QtCore.QSize(20, 20))
+
+    def EnterHoverMinimize(self):
+                icon1 = QtGui.QIcon()
+                icon1.addPixmap(QtGui.QPixmap(":/Windows/Icon/minimize_hover.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+                self.Btn_Minimize.setIcon(icon1)
+                self.Btn_Minimize.setIconSize(QtCore.QSize(20, 20))
+    def LeaveHoverMinimize(self):
+                icon1 = QtGui.QIcon()
+                icon1.addPixmap(QtGui.QPixmap(":/Windows/Icon/minimize.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+                self.Btn_Minimize.setIcon(icon1)
+                self.Btn_Minimize.setIconSize(QtCore.QSize(20, 20))
         
-#------------------------------------------------------------------------------------------
+#------------------------------------Hover Function----------------------------------------
     def EnterHover(self):
         self.animation1 = QtCore.QPropertyAnimation(self.frame_Menu, b"maximumWidth")
         self.animation1.setDuration(500)
@@ -2244,6 +2298,27 @@ class Ui_Stocker(object):
         self.toolButton_Info.setToolButtonStyle(QtCore.Qt.ToolButtonStyle.ToolButtonIconOnly)
         self.toolButton_Exit.setToolButtonStyle(QtCore.Qt.ToolButtonStyle.ToolButtonIconOnly)
         self.timer.stop()
+
+#------------------------------------Click Functions---------------------------------------
+        
+    def clickedIndicator(self, labelname, IndexNo):
+        self.stackedWidget.setCurrentIndex(IndexNo)
+        LabelNameList = [self.label_Anasayfa, self.label_StokArama, self.label_NewReferance, self.label_DelReferance, self.label_AddStock, self.label_DelStock, self.label_Report, self.label_Project, self.label_Excel, self.label_Info, self.label_Exit]
+        for labelnameloop in LabelNameList:
+            if labelname != labelnameloop:
+                        current_color = labelnameloop.palette().color(QPalette.Window)
+                        palette = labelnameloop.palette()
+                        palette.setColor(QPalette.Window, QColor(2, 128, 144, 0))
+                        labelnameloop.setPalette(palette)
+                        labelnameloop.setAutoFillBackground(True)
+            else:
+                current_color = labelnameloop.palette().color(QPalette.Window)
+                palette = labelnameloop.palette()
+                palette.setColor(QPalette.Window, QColor(2, 128, 144, 255))
+                labelnameloop.setPalette(palette)
+                labelnameloop.setAutoFillBackground(True)
+                 
+         
 
     def retranslateUi(self, Stocker):
         _translate = QtCore.QCoreApplication.translate
